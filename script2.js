@@ -4,7 +4,7 @@ var par=document.getElementById('par');
 var btn=document.getElementById('btn');
 var speed=50;
 
-//not working change speed generate circle functions!!!!
+//not working change speed functions!!!!
 
 // function slowSpeed(){
 //     speed=50;
@@ -48,7 +48,7 @@ function generator(){
     console.log(speed);
 }
 
-// i want click the circle and remove these. but not working that !!!
+// i want click the circle and remove these. but not working!!!
 
 // document.getElementsByClassName('myCircle').addEventListener("click",function(){
 //     alert('fjiwe')
