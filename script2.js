@@ -1,4 +1,3 @@
-
 var colors=['black','blue','green','yellow','red','violet','orange','brown','white','pink'];
 var par=document.getElementById('par');
 var btn=document.getElementById('btn');
@@ -31,12 +30,18 @@ function generator(){
     var colorNumber=Math.floor((Math.random()*10)+0)
     createCircle(x,y,radius,colorNumber)    
 }
-    
 
-    function createCircle(x,y,radius,colorNumber){
+var borderRadius="50%";
+var squere=document.getElementById('squere');
+squere.addEventListener('click',function(){
+    borderRadius='0'
+})
+
+function createCircle(x,y,radius,colorNumber){
     var circle=document.createElement('div');
+    
+    circle.style.borderRadius=borderRadius;
     circle.classList.add('myCircle')
-    circle.style.borderRadius='50%'
     par.appendChild(circle)
     circle.style.position='absolute';
     circle.style.left=x+'px';
@@ -55,3 +60,4 @@ function generator(){
     // par.removeChild(myCircle[this])
 
 // })
+
