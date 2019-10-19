@@ -60,4 +60,17 @@ function createCircle(x,y,radius,colorNumber){
     // par.removeChild(myCircle[this])
 
 // })
+//#############################################################################################
+//clear all circles button
+document.getElementById('clearCircles').addEventListener('click',function(){
+    
+    var myCircles=document.getElementsByClassName('myCircle');
+    for(var i=0;i<myCircles.length;i++){
+        if(myCircles[i].style.borderRadius=='50%'){
+            myCircles[i].style.borderRadius='0'
+        }
+    }
+
+})
+
 
