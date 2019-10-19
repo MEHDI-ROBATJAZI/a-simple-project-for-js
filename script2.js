@@ -2,7 +2,7 @@
 var colors=['black','blue','green','yellow','red','violet','orange','brown','white','pink'];
 var par=document.getElementById('par');
 var btn=document.getElementById('btn');
-var speed=50;
+var speed=500;
 
 //not working change speed generate circle functions!!!!
 
@@ -44,7 +44,7 @@ function generator(){
     circle.style.width=radius+'px';
     circle.style.height=radius+'px';
     circle.style.border='1px solid black';
-    circle.style.backgroundColor=colors[colorNumber];
+    circle.style.borderColor=colors[colorNumber];
     console.log(speed);
 }
 
