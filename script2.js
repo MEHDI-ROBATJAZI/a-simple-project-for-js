@@ -48,7 +48,7 @@ function createCircle(x,y,radius,colorNumber){
     circle.style.top=y+'px';    
     circle.style.width=radius+'px';
     circle.style.height=radius+'px';
-    circle.style.border='1px solid black';
+    circle.style.border='2px solid black';
     circle.style.borderColor=colors[colorNumber];
     console.log(speed);
 }
@@ -68,6 +68,8 @@ document.getElementById('clearCircles').addEventListener('click',function(){
     for(var i=0;i<myCircles.length;i++){
         if(myCircles[i].style.borderRadius=='50%'){
             myCircles[i].style.borderRadius='0'
+        }else{
+            myCircles[i].style.borderRadius='50%'
         }
     }
 

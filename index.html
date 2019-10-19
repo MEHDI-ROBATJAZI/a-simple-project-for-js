@@ -3,15 +3,24 @@
 	<head>
 		<title>es6 comperhand</title>
 		<meta charset="utf-8">
+		<style>
+			.speed{
+				position:absolute;
+				top:8px;
+				right:0;
+			}
+		</style>
 	</head>
 	<body style="background:rgb(163, 163, 163)">  
 		<button id="btn" style="z-index: 1000;">dont generate cicle</button>
 		<button id="squere">click to generate squere</button>
-		<button id= clearCircles>clear all circles and change to squere</button>
-		<button onclick="slowSpeed()">speed: slow  0.0050</button>
-		<button onclick="normalSpeed()">speed: normal 0.0500</button>
-		<button onclick="fastSpeed()">speed: fast 1000</button>
-		
+		<button id= clearCircles>toggle circle squere</button>
+
+		<div class="speed">
+			<button onclick="slowSpeed()">speed: slow  0.0050</button>
+			<button onclick="normalSpeed()">speed: normal 0.0500</button>
+			<button onclick="fastSpeed()">speed: fast 1000</button>
+		</div>
 		<div id="par">
 
 		</div>
