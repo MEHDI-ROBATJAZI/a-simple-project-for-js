@@ -1,35 +1,29 @@
 var colors=['black','blue','green','yellow','red','violet','orange','brown','white','pink'];
 var par=document.getElementById('par');
-var btn=document.getElementById('btn');
-var speed=500;
-
+var stop=document.getElementById('stop');
+var slow=document.getElementById('slowSpeed');
+var normal=document.getElementById('normalSpeed');
+var fast=document.getElementById('fastSpeed');
+var count=0;
+var showCount=document.getElementById('count');
 //not working change speed generate circle functions!!!!
 
-// function slowSpeed(){
-//     speed=50;
-// }
-// function normalSpeed(){
-//     speed=500;
-// }
-// function fastSpeed(){ 
-//     speed=1000  ;
-// }   
 
 
-var timer=setInterval(generator,speed)
+// stop.addEventListener("click",function(){
+//     clearInterval(timer);
+// })
 
-function generator(){
-    
-    btn.addEventListener("click",function(){
-        clearInterval(timer);
-    })
-    
+var timer=setInterval(function(speed){
+    debugger;
     var y = Math.floor((Math.random() * 450) + 40).toString();
     var x = Math.floor((Math.random() * 1500) + 1).toString();
     var radius= Math.floor((Math.random() * 200) + 1).toString();
     var colorNumber=Math.floor((Math.random()*10)+0)
     createCircle(x,y,radius,colorNumber)    
-}
+    showCount.textContent+=' ___ '+speed;
+},speed)    
+
 
 var borderRadius="50%";
 var squere=document.getElementById('squere');
@@ -50,10 +44,11 @@ function createCircle(x,y,radius,colorNumber){
     circle.style.height=radius+'px';
     circle.style.border='2px solid black';
     circle.style.borderColor=colors[colorNumber];
-    console.log(speed);
+    count++;
+    showCount.textContent=count;
 }
 
-// i want click the circle and remove these. but not working that !!!
+// i want click the circle and remove it. but not working that !!!
 
 // document.getElementsByClassName('myCircle').addEventListener("click",function(){
 //     alert('fjiwe')
@@ -61,12 +56,13 @@ function createCircle(x,y,radius,colorNumber){
 
 // })
 //#############################################################################################
+
 //clear all circles button
 document.getElementById('clearCircles').addEventListener('click',function(){
     
     var myCircles=document.getElementsByClassName('myCircle');
-    for(var i=0;i<myCircles.length;i++){
-        if(myCircles[i].style.borderRadius=='50%'){
+        for(var i=0;i<myCircles.length;i++){
+            if(myCircles[i].style.borderRadius=='50%'){
             myCircles[i].style.borderRadius='0'
         }else{
             myCircles[i].style.borderRadius='50%'
