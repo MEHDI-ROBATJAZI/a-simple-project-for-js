@@ -6,23 +6,28 @@ var normal=document.getElementById('normalSpeed');
 var fast=document.getElementById('fastSpeed');
 var count=0;
 var showCount=document.getElementById('count');
+var Speed=1000;
 //not working change speed generate circle functions!!!!
 
 
 
-// stop.addEventListener("click",function(){
-//     clearInterval(timer);
-// })
+stop.addEventListener("click",function(){
+    clearInterval(timer);
+})
 
-var timer=setInterval(function(speed){
-    debugger;
+function setSpeed(sp){
+    Speed=sp
+}
+
+var timer=setInterval(function(){
     var y = Math.floor((Math.random() * 450) + 40).toString();
     var x = Math.floor((Math.random() * 1500) + 1).toString();
     var radius= Math.floor((Math.random() * 200) + 1).toString();
     var colorNumber=Math.floor((Math.random()*10)+0)
+    showCount.textContent=count;
     createCircle(x,y,radius,colorNumber)    
-    showCount.textContent+=' ___ '+speed;
-},speed)    
+
+},Speed)    
 
 
 var borderRadius="50%";
@@ -48,7 +53,7 @@ function createCircle(x,y,radius,colorNumber){
     showCount.textContent=count;
 }
 
-// i want click the circle and remove it. but not working that !!!
+// i want click the circle and remove these. but not working!!!
 
 // document.getElementsByClassName('myCircle').addEventListener("click",function(){
 //     alert('fjiwe')
