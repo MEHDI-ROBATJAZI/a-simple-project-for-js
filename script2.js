@@ -48,7 +48,7 @@ function createCircle(x,y,radius,colorNumber){
     showCount.textContent=count;
 }
 
-// i want click the circle and remove it. but not working that !!!
+// i want click the circle and remove these. but not working!!!
 
 // document.getElementsByClassName('myCircle').addEventListener("click",function(){
 //     alert('fjiwe')
