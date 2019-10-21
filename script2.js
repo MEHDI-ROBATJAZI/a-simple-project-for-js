@@ -1,33 +1,40 @@
-var colors=['black','blue','green','yellow','red','violet','orange','brown','white','pink'];
-var par=document.getElementById('par');
-var stop=document.getElementById('stop');
-var slow=document.getElementById('slowSpeed');
-var normal=document.getElementById('normalSpeed');
-var fast=document.getElementById('fastSpeed');
-var count=0;
-var showCount=document.getElementById('count');
-var Speed=1000;
+var colors = ['black','blue','green','yellow','red','violet','orange','brown','white','pink'];
+
+var count=0,
+  par = document.getElementById('par'),
+  stop = document.getElementById('stop'),
+  slow = document.getElementById('slowSpeed'),
+  normal = document.getElementById('normalSpeed'),
+  fast = document.getElementById('fastSpeed'),
+  showCount = document.getElementById('count'),
+  Speed = 5000;
 //not working change speed generate circle functions!!!!
 
-
-
-stop.addEventListener("click",function(){
-    clearInterval(timer);
-})
-
 function setSpeed(sp){
-    Speed=sp
+    Speed = sp
 }
 
-var timer=setInterval(function(){
-    var y = Math.floor((Math.random() * 450) + 40).toString();
-    var x = Math.floor((Math.random() * 1500) + 1).toString();
+fast.addEventListener("click", () => {
+  speedUp()
+})
+normal.addEventListener("click", () => {
+  Speed = 2000
+  updateSpeed()
+})
+slow.addEventListener("click", () => {
+  slowDown()
+})
+
+const makeCircles = () => {
+    var y = Math.floor((Math.random() * (screen.height - 200)) + 40).toString();
+    var x = Math.floor((Math.random() * (screen.width - 200)) + 1).toString();
     var radius= Math.floor((Math.random() * 200) + 1).toString();
     var colorNumber=Math.floor((Math.random()*10)+0)
-    showCount.textContent=count;
-    createCircle(x,y,radius,colorNumber)    
-
-},Speed)    
+    showCount.textContent = count;
+    createCircle(x,y,radius,colorNumber)
+    setTimeout(makeCircles, Speed)
+    console.log("i did a circle")
+}  
 
 
 var borderRadius="50%";
@@ -37,20 +44,20 @@ squere.addEventListener('click',function(){
 })
 
 function createCircle(x,y,radius,colorNumber){
-    var circle=document.createElement('div');
+    var circle = document.createElement('div');
     
-    circle.style.borderRadius=borderRadius;
+    circle.style.borderRadius = borderRadius;
     circle.classList.add('myCircle')
     par.appendChild(circle)
     circle.style.position='absolute';
-    circle.style.left=x+'px';
-    circle.style.top=y+'px';    
-    circle.style.width=radius+'px';
-    circle.style.height=radius+'px';
-    circle.style.border='2px solid black';
-    circle.style.borderColor=colors[colorNumber];
+    circle.style.left = x + 'px';
+    circle.style.top = y + 'px';    
+    circle.style.width = radius + 'px';
+    circle.style.height = radius + 'px';
+    circle.style.border = '2px solid black';
+    circle.style.borderColor = colors[colorNumber];
     count++;
-    showCount.textContent=count;
+    showCount.textContent = count;
 }
 
 // i want click the circle and remove these. but not working!!!
@@ -76,4 +83,31 @@ document.getElementById('clearCircles').addEventListener('click',function(){
 
 })
 
+
+const createSquares = () => {
+
+}
+
+const removeCircles = () => {
+
+}
+
+const slowDown = () => {
+  Speed = Speed * 2
+  updateSpeed()
+}
+
+const speedUp = () => {
+  Speed = Speed / 2
+  updateSpeed()
+}
+
+const updateSpeed = () => {
+  let speedInSeconds = Speed/1000
+  let updatedSpeed = 1/speedInSeconds + "circles/second"
+  document.getElementById("actualSpeed").textContent = updatedSpeed
+  console.log(updatedSpeed)
+}
+
+window.onload(makeCircles())
 
