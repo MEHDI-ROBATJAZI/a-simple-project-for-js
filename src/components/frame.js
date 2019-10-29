@@ -11,7 +11,6 @@ import React from 'react'
 // }
 
 function Frame({style}) {
-  
 
   let defaultStyle = {
     position: 'absolute',
@@ -24,8 +23,6 @@ function Frame({style}) {
     borderColor: style.color,
     borderRadius: '50%'
   }
-  console.log("style")
-  console.log(style)
 
   return(
     <div style={defaultStyle}></div>

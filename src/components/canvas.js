@@ -1,7 +1,6 @@
-import React, {useState}from 'react'
+import React, {useState, useEffect}from 'react'
 
 import Frame from './frame'
-
 
 let canvaStyle = {
   borderColor: 'black',
@@ -10,13 +9,12 @@ let canvaStyle = {
 }
 
 
-
-
-function Canvas({speed}) {
+function Canvas({timer}) {
 
   const [ style, setStyle ] = useState([])
   
   const maxSize = 100
+
   const buildFrame = () => {    
     let R = Math.floor(Math.random() * 255).toString()
     let G = Math.floor(Math.random() * 255).toString()
@@ -32,19 +30,19 @@ function Canvas({speed}) {
     setStyle([...style, newStyle])
   }  
 
-  setTimeout(
-    
-      buildFrame
-    
-  , speed)
-  
+  useEffect(() => {
+    let timeID = setTimeout(    
+      buildFrame    
+    , timer)
 
+    return () => clearTimeout(timeID)
+  }, [style])
+  
+  
   return (
     <div style={canvaStyle}>
-        <h1>{style.length}</h1>
-        {style.map(item => <Frame style={item}/>)}
-       
-      
+      <h1 placeholder="0" id="circle-counter">{style.length}</h1>
+      {style.map(item => <Frame style={item}/>)}             
     </div>
   )
 }
