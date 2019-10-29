@@ -1,19 +1,20 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import './App.css';
 
+import TimerContext from './TimerContext'
 import Nav from './components/nav'
 import Canvas from './components/canvas'
 
-class App extends React.Component {
+function App() {
 
-  render() {
+const [timer, setTimer] = useState(1000)
+  
     return (
-      <>
+      <TimerContext.Provider value={{ timer, setTimer }}>
         <Nav />		  
-        <Canvas  id="par" timer={2000}/>
-      </>
+        <Canvas id="par" />
+      </TimerContext.Provider>
     )
   }
-}
 
 export default App;
