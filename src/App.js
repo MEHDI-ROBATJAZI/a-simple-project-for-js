@@ -10,7 +10,7 @@ class App extends React.Component {
     return (
       <>
         <Nav />		  
-        <Canvas  id="par" speed={500}/>
+        <Canvas  id="par" timer={2000}/>
       </>
     )
   }
