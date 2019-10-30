@@ -31,7 +31,7 @@ function Canvas({timer}) {
   }  
 
   useEffect(() => {
-    let timeID = setTimeout(    
+    const timeID = setTimeout(    
       buildFrame    
     , timer)
 
