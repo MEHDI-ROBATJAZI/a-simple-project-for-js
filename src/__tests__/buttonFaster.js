@@ -8,17 +8,17 @@ import App from '../App'
 
 jest.useFakeTimers();
 
-describe('ButtonSlower',() => {
-  test('after click and more 10 seconds the counter is 5', () => {
+describe('ButtonFaster',() => {
+  test('after click and more 20 seconds the counter is 20', async () => {
     const { getByPlaceholderText, getByText } = render(<App />)
     const counter = getByPlaceholderText('0')
 
-    fireEvent.click(getByText('slower'))
-    console.log(counter.textContent)
+    await fireEvent.click(getByText('faster'))
+
     act(() => {
-      jest.advanceTimersByTime( 2001 )
+      jest.advanceTimersByTime(101000)
     })  
 
-    expect(counter).toHaveTextContent('1') 
+    expect(counter).toHaveTextContent('20')
   })
 })

@@ -2,6 +2,7 @@ import React from 'react';
 
 import Button from './button'
 import ButtonSlower from './buttonSlower'
+import ButtonFaster from './buttonFaster'
 
 
 
@@ -24,7 +25,7 @@ function Nav() {
         <li>Count</li>
         <ButtonSlower />        
         <Button text="default"/>
-        <Button text="faster" />
+        <ButtonFaster />
         <li>Circles/Second</li>
       </ul>
     </nav>

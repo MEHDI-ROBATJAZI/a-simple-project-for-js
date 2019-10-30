@@ -4,14 +4,16 @@ import Button from './button'
 import TimerContext from '../TimerContext'
 
 
-function ButtonSlower(){
+function ButtonFaster(){
   const { timer, setTimer } = useContext( TimerContext )
 
+  const changeTimer = (currentTimer) => currentTimer / 2
+
   return(
-    <Button text={"slower"} onClick={ () => {
-      setTimer(timer * 2)
+    <Button text={"faster"} onClick={ () => {
+      setTimer( changeTimer )
     } }/>
   )
 }
 
-export default ButtonSlower
+export default ButtonFaster
