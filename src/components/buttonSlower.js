@@ -3,9 +3,8 @@ import React,{ useContext } from 'react'
 import Button from './button'
 import TimerContext from '../TimerContext'
 
-
 function ButtonSlower(){
-  const { timer, setTimer } = useContext( TimerContext )
+  const [timer, setTimer] = useContext( TimerContext )
 
   return(
     <Button text={"slower"} onClick={ () => {

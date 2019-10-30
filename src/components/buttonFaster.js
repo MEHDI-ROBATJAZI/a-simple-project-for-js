@@ -5,13 +5,11 @@ import TimerContext from '../TimerContext'
 
 
 function ButtonFaster(){
-  const { timer, setTimer } = useContext( TimerContext )
-
-  const changeTimer = (currentTimer) => currentTimer / 2
+  const [timer, setTimer]  = useContext( TimerContext )
 
   return(
     <Button text={"faster"} onClick={ () => {
-      setTimer( changeTimer )
+      setTimer(timer / 2)
     } }/>
   )
 }

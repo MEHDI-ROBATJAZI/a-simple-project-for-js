@@ -3,6 +3,7 @@ import React from 'react';
 import Button from './button'
 import ButtonSlower from './buttonSlower'
 import ButtonFaster from './buttonFaster'
+import ButtonDefault from './buttonDefault'
 
 
 
@@ -24,7 +25,7 @@ function Nav() {
         <Button text="toggle circle squere" />
         <li>Count</li>
         <ButtonSlower />        
-        <Button text="default"/>
+        <ButtonDefault />
         <ButtonFaster />
         <li>Circles/Second</li>
       </ul>

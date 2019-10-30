@@ -15,10 +15,10 @@ describe('ButtonFaster',() => {
 
     await fireEvent.click(getByText('faster'))
 
-    act(() => {
-      jest.advanceTimersByTime(101000)
+    await act(async () => {
+      await jest.advanceTimersByTime(2500) // for some reason React has a delay of 0.5 seconds
     })  
 
-    expect(counter).toHaveTextContent('20')
+    expect(counter).toHaveTextContent('4')
   })
 })

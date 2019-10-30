@@ -7,10 +7,10 @@ import Canvas from './components/canvas'
 
 function App() {
 
-const [timer, setTimer] = useState(1000)
+const timerState = useState(1000)
   
     return (
-      <TimerContext.Provider value={{ timer, setTimer }}>
+      <TimerContext.Provider value={timerState}>
         <Nav />		  
         <Canvas id="par" />
       </TimerContext.Provider>

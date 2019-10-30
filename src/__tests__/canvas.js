@@ -24,4 +24,3 @@ describe('Canvas', () => {
     expect(counter).toHaveTextContent('10')  
   })
 })
-

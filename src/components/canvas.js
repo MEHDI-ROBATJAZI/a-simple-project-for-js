@@ -12,8 +12,8 @@ let canvaStyle = {
 
 function Canvas({  }) {
 
-  const [ style, setStyle ] = useState([])
-  const { timer, setTimer } = useContext(TimerContext)
+  const [ style, setStyle ]  = useState([])
+  const [ timer, setTimer ] = useContext(TimerContext)
   
   const maxSize = 100
 
