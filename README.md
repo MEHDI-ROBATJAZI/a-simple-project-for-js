@@ -1,5 +1,6 @@
 # RCG-PROJECT
 RCG-PROJECT is a Random Circle Generator, where you can make as many circles as you want, you can slow down, go faster, or stop it. You are the master of the circles.
+Click [here](https://rcg-project.herokuapp.com/) to check it.
 
 
 ## `yarn install`
@@ -42,5 +43,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ## Colaboration
 
 If you want to help, just message us or grab an issue. Thank you.
-
-
