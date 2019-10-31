@@ -9,9 +9,7 @@ let canvaStyle = {
   padding: 10
 }
 
-
-function Canvas({  }) {
-
+function Canvas({ isOn }) {
   const [ style, setStyle ]  = useState([])
   const [ timer, setTimer ] = useContext(TimerContext)
   
@@ -32,14 +30,17 @@ function Canvas({  }) {
     setStyle([...style, newStyle])
   }  
 
+  // useEffect(() => {
+  //   !isOn&&setStyle(style)
+  // }, [isOn])
+
   useEffect(() => {
     const timeID = setTimeout(    
-      buildFrame    
+      isOn&&buildFrame    
     , timer)
 
     return () => clearTimeout(timeID)
-  }, [style])
-  
+  }, [style,isOn])  
   
   return (
     <div style={canvaStyle}>
