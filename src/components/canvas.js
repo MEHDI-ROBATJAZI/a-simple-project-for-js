@@ -35,11 +35,11 @@ function Canvas({ isOn }) {
   // }, [isOn])
 
   useEffect(() => {
-    const timeID = setTimeout(    
-      isOn&&buildFrame    
+    const timeID = isOn && setTimeout(    
+      buildFrame    
     , timer)
 
-    return () => clearTimeout(timeID)
+    return () => isOn && clearTimeout(timeID)
   }, [style,isOn])  
   
   return (

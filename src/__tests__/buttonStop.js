@@ -13,7 +13,9 @@ describe('ButtonStop',() => {
     it('keep counter as 0',() => {      
       const { getByPlaceholderText, getByText } = render(<App />)
       const counter = getByPlaceholderText('0')                
-            
+      
+      fireEvent.click(getByText('stop'))
+      fireEvent.click(getByText('start'))    
       fireEvent.click(getByText('stop'))
       act(() => {
         jest.advanceTimersByTime( 1000 )
