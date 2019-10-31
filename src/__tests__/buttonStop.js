@@ -9,7 +9,7 @@ import App from '../App'
 jest.useFakeTimers();
 
 describe('ButtonStop',() => {
-  describe('when click stop counter freezes',() => {
+  describe('when click stop',() => {
     it('keep counter as 0',() => {      
       const { getByPlaceholderText, getByText } = render(<App />)
       const counter = getByPlaceholderText('0')                
