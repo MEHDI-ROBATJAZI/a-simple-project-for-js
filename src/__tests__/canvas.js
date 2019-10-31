@@ -3,25 +3,24 @@ import { render } from '@testing-library/react'
 import { act } from 'react-dom/test-utils';
 import '@testing-library/jest-dom/extend-expect'
 
-import Canvas from "../components/canvas"
+import App from "../App"
 
 jest.useFakeTimers();
 
 describe('Canvas', () => {
   test('counter start with 0', () => {
-    const { getByPlaceholderText } = render(<Canvas timer={500} />)
-    const inputNode = getByPlaceholderText('0')
+    const { getByPlaceholderText } = render(<App />)
+    const counter = getByPlaceholderText('0')
     
-    expect(inputNode).toHaveTextContent('0')      
+    expect(counter).toHaveTextContent('0')      
   })
-  test('after 10seconds is set to 20', () => {
-    const { getByPlaceholderText } = render(<Canvas timer={500} />)
-    const inputNode = getByPlaceholderText('0')
+  test('after 10seconds is set to 10', () => {
+    const { getByPlaceholderText } = render(<App />)
+    const counter = getByPlaceholderText('0')
 
     act(() => {
       jest.advanceTimersByTime(10000)
     })  
-    expect(inputNode).toHaveTextContent('20')  
+    expect(counter).toHaveTextContent('10')  
   })
 })
-

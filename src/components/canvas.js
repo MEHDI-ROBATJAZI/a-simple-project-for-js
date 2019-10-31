@@ -1,5 +1,6 @@
-import React, {useState, useEffect}from 'react'
+import React, { useState, useEffect, useContext }from 'react'
 
+import TimerContext from '../TimerContext'
 import Frame from './frame'
 
 let canvaStyle = {
@@ -9,9 +10,10 @@ let canvaStyle = {
 }
 
 
-function Canvas({timer}) {
+function Canvas({  }) {
 
-  const [ style, setStyle ] = useState([])
+  const [ style, setStyle ]  = useState([])
+  const [ timer, setTimer ] = useContext(TimerContext)
   
   const maxSize = 100
 

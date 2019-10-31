@@ -5,11 +5,11 @@ let liStyle={
   display: 'inline-block'
 }
 
-function Button({text}){
-  console.log(text)
+
+function Button({ text, onClick }){
   return(
-    <li style={liStyle} >
-      <button >{text}</button>
+    <li style={liStyle}>
+      <button onClick={ onClick }>{text}</button>
     </li> 
   )
 }

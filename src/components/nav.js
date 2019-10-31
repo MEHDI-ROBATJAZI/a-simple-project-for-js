@@ -1,6 +1,9 @@
 import React from 'react';
 
 import Button from './button'
+import ButtonSlower from './buttonSlower'
+import ButtonFaster from './buttonFaster'
+import ButtonDefault from './buttonDefault'
 
 
 
@@ -15,18 +18,25 @@ let navStyle = {
 function Nav() {
 
   return (
-    <nav style={navStyle}>
-      <ul style={ulStyle}>
+    <nav style={ navStyle }>
+      <ul style={ ulStyle }>
         <Button text="dont generate circle" />
         <Button text="click to generate squere"/>
         <Button text="toggle circle squere" />
         <li>Count</li>
-        <Button text="slower" />
-        <Button text="default"/>
-        <Button text="faster" />
+        <ButtonSlower />        
+        <ButtonDefault />
+        <ButtonFaster />
         <li>Circles/Second</li>
-    
-      {/* <li>
+      </ul>
+    </nav>
+      
+  )
+}
+
+export default Nav 
+
+{/* <li>
         <button id="stop" style="z-index: 1000;">dont generate cicle</button>
       </li>
       <li>
@@ -46,10 +56,4 @@ function Nav() {
       </li>
       <li>
         <button id="fastSpeed" onclick="timer(50)">speed: fast 0.5000</button>
-      </li> */}
-    </ul>
-  </nav>
-  )
-}
-
-export default Nav 
+      </li> */}    
