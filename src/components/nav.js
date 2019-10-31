@@ -4,6 +4,8 @@ import Button from './button'
 import ButtonSlower from './buttonSlower'
 import ButtonFaster from './buttonFaster'
 import ButtonDefault from './buttonDefault'
+import ButtonStop from './buttonStop'
+
 
 
 
@@ -15,12 +17,12 @@ let ulStyle = {
 let navStyle = {
   height: 80
 }
-function Nav() {
-
+function Nav({ onState }) {
+  
   return (
     <nav style={ navStyle }>
       <ul style={ ulStyle }>
-        <Button text="dont generate circle" />
+        <ButtonStop onState={onState} />
         <Button text="click to generate squere"/>
         <Button text="toggle circle squere" />
         <li>Count</li>
