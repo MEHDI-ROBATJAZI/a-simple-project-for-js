@@ -1,0 +1,12 @@
+.canvas {
+  padding: 10px;
+}
+
+.frame {
+  position: absolute;
+  border: 8px solid;
+}
+
+.circle {
+  border-radius: 50%;
+}
