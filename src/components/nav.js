@@ -4,6 +4,8 @@ import Button from './button'
 import ButtonSlower from './buttonSlower'
 import ButtonFaster from './buttonFaster'
 import ButtonDefault from './buttonDefault'
+import ButtonStop from './buttonStop'
+
 
 const ulStyle = {
   listStyleType: 'none',
@@ -17,13 +19,14 @@ const navStyle = {
 
 function Nav({
   setFrameFormat,
-  frameFormat
+  frameFormat,
+  onState
 }) {
 
   return (
     <nav style={ navStyle }>
       <ul style={ ulStyle }>
-        <Button text="dont generate circle" />
+        <ButtonStop onState={onState} />
         {
           frameFormat === 'square' && (
             <Button

@@ -4,7 +4,8 @@ import TimerContext from '../../TimerContext';
 import './style.css';
 
 function Canvas({
-  frameFormat
+  frameFormat,
+  isOn
 }) {
 
   const [ framesStyle, setFramesStyle ] = useState([]);
@@ -36,12 +37,12 @@ function Canvas({
   };
 
   useEffect(() => {
-    const timeID = setTimeout(buildFrame,
+    const timeID = isOn && setTimeout(buildFrame,
       timer
     );
 
-    return () => clearTimeout(timeID);
-  }, [framesStyle]);
+    return () => isOn && clearTimeout(timeID);
+  }, [ framesStyle, isOn ]);
 
   return (
     <div className='canvas'>
