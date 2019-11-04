@@ -19,6 +19,7 @@ jest.mock('../../components/buttonFaster', () => {
 const renderComp = (props = {}) => {
   return render(
     <Nav
+      onState={[true, () => {}]}
       {...props}
     />
   );
