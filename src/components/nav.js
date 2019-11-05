@@ -7,42 +7,24 @@ import ButtonDefault from './buttonDefault'
 import ButtonStop from './buttonStop'
 
 
-const ulStyle = {
+
+
+let ulStyle = {
   listStyleType: 'none',
   margin: 0,
   padding: 0
-};
-
-const navStyle = {
+}
+let navStyle = {
   height: 80
-};
-
-function Nav({
-  setFrameFormat,
-  frameFormat,
-  onState
-}) {
-
+}
+function Nav({ onState }) {
+  
   return (
     <nav style={ navStyle }>
       <ul style={ ulStyle }>
         <ButtonStop onState={onState} />
-        {
-          frameFormat === 'square' && (
-            <Button
-              text="Circle"
-              onClick={() => setFrameFormat('circle')}
-            />
-          )
-        }
-        {
-          frameFormat === 'circle' && (
-            <Button
-              text='Square'
-              onClick={() => setFrameFormat('square')}
-            />
-          )
-        }
+        <Button text="click to generate squere"/>
+        <Button text="toggle circle squere" />
         <li>Count</li>
         <ButtonSlower />        
         <ButtonDefault />
@@ -52,6 +34,28 @@ function Nav({
     </nav>
       
   )
-};
+}
 
-export default Nav;
+export default Nav 
+
+{/* <li>
+        <button id="stop" style="z-index: 1000;">dont generate cicle</button>
+      </li>
+      <li>
+        <button id="squere">click to generate squere</button>
+      </li>
+      <li>
+        <button id="clearCircles">toggle circle squere</button>
+      </li>
+      <li>
+        <span id="count">count</span>
+      </li>
+      <li>
+        <button id="slowSpeed" onclick="timer(1000)">speed: slow  1000</button>
+      </li>
+      <li>
+        <button id="normalSpeed" onclick="timer(500)">speed: normal 0.500</button>
+      </li>
+      <li>
+        <button id="fastSpeed" onclick="timer(50)">speed: fast 0.5000</button>
+      </li> */}    

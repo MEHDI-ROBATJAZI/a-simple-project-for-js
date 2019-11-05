@@ -4,15 +4,15 @@ import { act } from 'react-dom/test-utils';
 import '@testing-library/jest-dom/extend-expect'
 
 
-import App from '../../App'
+import App from '../App'
 
 jest.useFakeTimers();
 
 describe('ButtonDefault',() => {
   describe('when is faster and click default',() => {
     it('set to default speed ', () => {      
-      const { getByText, getByTestId } = render(<App />)
-      const counter = getByTestId('frame-counter')
+      const { getByPlaceholderText, getByText } = render(<App />)
+      const counter = getByPlaceholderText('0')                
 
       fireEvent.click(getByText('faster'))
       act(() => {
@@ -29,8 +29,8 @@ describe('ButtonDefault',() => {
 
   describe('when is slower and click default',() => {
     it('set to default speed ', () => {
-      const { getByTestId, getByText } = render(<App />)
-      const counter = getByTestId('frame-counter')
+      const { getByPlaceholderText, getByText } = render(<App />)
+      const counter = getByPlaceholderText('0')                
 
       fireEvent.click(getByText('slower'))
       act(() => {
