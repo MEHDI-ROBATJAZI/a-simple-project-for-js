@@ -1,10 +1,10 @@
-import React,{ useContext } from 'react'
+import React,{ useContext } from 'react';
 
-import Button from '../button'
-import TimerContext from '../../TimerContext'
+import Button from '../button';
+import TimerContext from '../../TimerContext';
 
 function ButtonFaster(){
-  const [ timer, setTimer]  = useContext( TimerContext )
+  const [ timer, setTimer]  = useContext( TimerContext );
 
   return(
     <Button
@@ -18,4 +18,4 @@ function ButtonFaster(){
   )
 }
 
-export default ButtonFaster
+export default ButtonFaster;

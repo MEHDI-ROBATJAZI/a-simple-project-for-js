@@ -1,5 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const IsOnContext = React.createContext()
+const IsOnContext = React.createContext();
 
-export default IsOnContext
+export default IsOnContext;

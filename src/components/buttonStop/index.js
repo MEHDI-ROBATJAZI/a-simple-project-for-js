@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-import Button from '../button'
+import Button from '../button';
 
 function ButtonStop({onState}){
-  const [ isOn, setIsOn ] = onState
+  const [ isOn, setIsOn ] = onState;
   
   return(
     <Button
@@ -17,4 +17,4 @@ function ButtonStop({onState}){
   )
 }
 
-export default ButtonStop
+export default ButtonStop;

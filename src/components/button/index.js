@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import './style.css';
 
 function Button({ text, onClick, bgColor, textColor }){
@@ -19,4 +19,4 @@ function Button({ text, onClick, bgColor, textColor }){
   )
 }
 
-export default Button
+export default Button;

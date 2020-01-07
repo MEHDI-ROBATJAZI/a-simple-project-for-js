@@ -1,5 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const TimerContext = React.createContext()
+const TimerContext = React.createContext();
 
-export default TimerContext
+export default TimerContext;
