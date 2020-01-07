@@ -6,12 +6,13 @@ import './style.css';
 
 function Canvas({
   frameFormat,
-  isOn,
-  maxSize
+  isOn
 }) {
 
   const [ framesStyle, setFramesStyle ] = useState([]);
   const [ timer ] = useContext(TimerContext);
+
+  const maxSize = 100;
   
   useEffect(() => {
     const timeID = isOn && setTimeout(() => {
