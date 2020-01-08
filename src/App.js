@@ -1,27 +1,50 @@
-import React,{ useState } from 'react';
-import './App.css';
+import React, { useState, useEffect } from 'react';
 
-import TimerContext from './TimerContext';
+import './App.css';
 import Nav from './components/nav';
 import Canvas from './components/canvas';
+import buildFrame from './utils/buildFrame';
+
+const FRAME_MAX_SIZE = 100;
 
 function App() {
-  const onState = useState(true);
-  const timerState = useState(1000);
+  const [ isOn, setIsOn] = useState(true);
   const [ frameFormat, setFrameFormat ] = useState('circle');
-  
+  const [ framesStyle, setFramesStyle ] = useState([]);
+  const [ time, setTime ] = useState(1000);
+
+  useEffect(() => {
+    let timerId = 0;
+
+    if (isOn) {
+      timerId = setTimeout(() => {
+        const newFrameStyle = buildFrame({
+          maxSize: FRAME_MAX_SIZE,
+          frameFormat
+        });
+
+        setFramesStyle([...framesStyle, newFrameStyle])
+      }, time );
+    }
+
+    return () => clearTimeout(timerId);
+
+  }, [ time, isOn, framesStyle, frameFormat ]);
+   
   return (
-    <TimerContext.Provider value={timerState}>
+    <>
       <Nav
-        setFrameFormat={setFrameFormat}
         frameFormat={frameFormat}
-        onState={onState}
+        setFrameFormat={setFrameFormat}
+        isOn={isOn}
+        setIsOn={setIsOn}
+        time={time}
+        setTime={setTime}
       />
       <Canvas
-        frameFormat={frameFormat}
-        isOn={onState[0]}
+        framesStyle={framesStyle}
       />
-    </TimerContext.Provider>
+    </>
   )
 }
 

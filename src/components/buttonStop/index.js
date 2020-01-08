@@ -2,9 +2,10 @@ import React from 'react';
 
 import Button from '../button';
 
-function ButtonStop({onState}){
-  const [ isOn, setIsOn ] = onState;
-  
+function ButtonStop({
+  isOn,
+  setIsOn
+}){
   return(
     <Button
       text={isOn?"Stop":"Start"}

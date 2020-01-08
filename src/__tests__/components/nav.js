@@ -4,16 +4,8 @@ import '@testing-library/jest-dom/extend-expect';
 
 import Nav from '../../components/nav';
 
-jest.mock('../../components/buttonSlower', () => {
-  return () => 'buttonSlower'
-});
-
-jest.mock('../../components/buttonDefault', () => {
-  return () => 'buttonDefault'
-});
-
-jest.mock('../../components/buttonFaster', () => {
-  return () => 'buttonFaster'
+jest.mock('../../components/speedButton', () => {
+  return () => 'speedButton'
 });
 
 const renderComp = (props = {}) => {

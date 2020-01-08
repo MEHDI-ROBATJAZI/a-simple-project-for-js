@@ -1,31 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React from 'react';
 
-import TimerContext from '../../TimerContext';
-import buildFrame from '../../utils/buildFrame';
 import './style.css';
 
 function Canvas({
-  frameFormat,
-  isOn
+  framesStyle
 }) {
-
-  const [ framesStyle, setFramesStyle ] = useState([]);
-  const [ timer ] = useContext(TimerContext);
-
-  const maxSize = 100;
-  
-  useEffect(() => {
-    const timeID = isOn && setTimeout(() => {
-      const newFrameStyle = buildFrame({
-        maxSize,
-        frameFormat
-      });
-
-      setFramesStyle([...framesStyle, newFrameStyle]);
-    }, timer );
-
-    return () => isOn && clearTimeout(timeID);
-  }, [ framesStyle, isOn ]);
 
   return (
     <div className='canvas'>

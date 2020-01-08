@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import Button from '../button'
+import Button from '../button';
 
 const lineStyle = {
   display: 'inline-block'
