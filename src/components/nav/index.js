@@ -1,9 +1,9 @@
 import React from 'react';
 
-import ButtonStop from './buttonStop';
-import FormatButton from './formatButton';
-import SpeedButton from './speedButton';
-import speedButtonsProps from './../utils/speedButtonsProps';
+import ButtonStop from '../buttonStop';
+import FormatButton from '../formatButton';
+import SpeedButton from '../speedButton';
+import speedButtonsProps from '../../utils/speedButtonsProps';
 
 const ulStyle = {
   listStyleType: 'none',
@@ -25,8 +25,8 @@ function Nav({
 }) {
 
   return (
-    <nav style={ navStyle }>
-      <ul style={ ulStyle }>
+    <nav style={navStyle}>
+      <ul style={ulStyle}>
         <FormatButton
           setFrameFormat={setFrameFormat}
           frameFormat={frameFormat}

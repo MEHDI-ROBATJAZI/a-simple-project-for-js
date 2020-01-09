@@ -1,7 +1,12 @@
 import React from 'react';
 import './style.css';
 
-function Button({ text, onClick, bgColor, textColor }){
+function Button({
+  text,
+  onClick,
+  bgColor,
+  textColor
+}){
   const liStyle = {
     display: 'inline-block',
     padding: '5px'

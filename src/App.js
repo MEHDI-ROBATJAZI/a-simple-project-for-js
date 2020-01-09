@@ -8,10 +8,10 @@ import buildFrame from './utils/buildFrame';
 const FRAME_MAX_SIZE = 100;
 
 function App() {
-  const [ isOn, setIsOn] = useState(true);
-  const [ frameFormat, setFrameFormat ] = useState('circle');
-  const [ framesStyle, setFramesStyle ] = useState([]);
-  const [ time, setTime ] = useState(1000);
+  const [isOn, setIsOn] = useState(true);
+  const [frameFormat, setFrameFormat] = useState('circle');
+  const [framesStyle, setFramesStyle] = useState([]);
+  const [time, setTime] = useState(1000);
 
   useEffect(() => {
     let timerId = 0;
@@ -29,7 +29,7 @@ function App() {
 
     return () => clearTimeout(timerId);
 
-  }, [ time, isOn, framesStyle, frameFormat ]);
+  }, [time, isOn, framesStyle, frameFormat]);
    
   return (
     <>
