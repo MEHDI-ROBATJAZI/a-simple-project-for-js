@@ -40,6 +40,7 @@ function App() {
         setIsOn={setIsOn}
         time={time}
         setTime={setTime}
+        framesLength={framesStyle.length}
       />
       <Canvas
         framesStyle={framesStyle}

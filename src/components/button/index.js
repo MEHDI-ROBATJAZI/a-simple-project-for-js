@@ -7,19 +7,14 @@ function Button({
   bgColor,
   textColor
 }){
-  const liStyle = {
-    display: 'inline-block',
-    padding: '5px'
-  };
-
   const buttonStyle = {
     background: bgColor,
     color: textColor
   };
 
   return(
-    <li style={liStyle}>
-      <div style={buttonStyle} className='button' onClick={ onClick }>{text}</div>
+    <li className='button-line'>
+      <div style={buttonStyle} className='button' onClick={onClick}>{text}</div>
     </li> 
   )
 }

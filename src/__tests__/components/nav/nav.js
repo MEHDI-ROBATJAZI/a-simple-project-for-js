@@ -2,9 +2,9 @@ import React from "react";
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import Nav from '../../components/nav';
+import Nav from '../../../components/nav';
 
-jest.mock('../../components/speedButton', () => {
+jest.mock('../../../components/speedButton', () => {
   return () => 'speedButton'
 });
 

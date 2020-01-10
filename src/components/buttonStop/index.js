@@ -8,12 +8,10 @@ function ButtonStop({
 }){
   return(
     <Button
-      text={isOn?"Stop":"Start"}
-      bgColor={isOn?"red":"green"}
+      text={isOn ? "Stop" : "Start"}
+      bgColor={isOn ? "red" : "green"}
       textColor='white'
-      onClick={() => {
-        setIsOn(!isOn)
-      }}
+      onClick={() => setIsOn(!isOn)}
     />
   )
 }

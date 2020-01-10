@@ -1,6 +1,13 @@
+.button-line {
+  display: inline-block;
+  padding: 5px;
+}
+
 .button {
   display: inline-block !important;
   border-radius: 96px;
   padding: 8px 24px;
   cursor: pointer;
+  width: 50px;
+  text-align: center;
 }

@@ -5,21 +5,19 @@ import Button from '../button';
 function SpeedButton({
   time,
   setTime,
-  speedButtonProps
+  onClick,
+  speedMultiply,
+  ...props
 }){
-  const {
-    text,
-    bgColor,
-    textColor,
-    click,
-  } = speedButtonProps;
+  const handleOnClick = () => {
+    if (speedMultiply) setTime(time * speedMultiply);
+    else setTime(1000);
+  }
 
   return(
     <Button
-      text={text}
-      bgColor={bgColor}
-      textColor={textColor}
-      onClick={() => click({time, setTime})}
+      {...props}
+      onClick={handleOnClick}
     />
   )
 }
