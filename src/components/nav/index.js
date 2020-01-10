@@ -33,7 +33,7 @@ function Nav({
             <SpeedButton
               key={speedButtonProps.text}
               time={time}
-              setTime={setTime}
+              onClick={setTime}
               {...speedButtonProps}
             />
           ))

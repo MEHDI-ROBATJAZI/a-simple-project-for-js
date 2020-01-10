@@ -15,7 +15,7 @@ describe('SpeedButton',() => {
 
         const button = (
           <SpeedButton
-            setTime={(time) => initialTime = time}
+            onClick={(time) => initialTime = time}
             time={initialTime}
             {...slowerButtonProps}
           />
@@ -35,7 +35,7 @@ describe('SpeedButton',() => {
 
         const button = (
           <SpeedButton
-            setTime={(time) => initialTime = time}
+            onClick={(time) => initialTime = time}
             time={initialTime}
             {...defaultButtonProps}
           />
@@ -55,7 +55,7 @@ describe('SpeedButton',() => {
 
         const button = (
           <SpeedButton
-            setTime={(time) => initialTime = time}
+            onClick={(time) => initialTime = time}
             time={initialTime}
             {...fasterButtonProps}
           />
