@@ -6,16 +6,17 @@ import SpeedButton from '../../../components/speedButton';
 import speedButtonProps from '../../../utils/speedButtonsProps';
 
 const [slowerButtonProps, defaultButtonProps, fasterButtonProps] = speedButtonProps;
+const initialTime = 1000;
 
 describe('SpeedButton',() => {
   describe('when clicked',() => {
     describe('in the slower button',() => {
       it('set the time to double', () => {
-        let initialTime = 1000;
+        const onClick = jest.fn();
 
         const button = (
           <SpeedButton
-            onClick={(time) => initialTime = time}
+            onClick={onClick}
             time={initialTime}
             {...slowerButtonProps}
           />
@@ -25,17 +26,17 @@ describe('SpeedButton',() => {
 
         fireEvent.click(getByText('Slower'));
 
-        expect(initialTime).toBe(2000);
+        expect(onClick).toHaveBeenCalledWith(2000);
       });
     });
 
     describe('in the default button',() => {
       it('set the time to initial value', () => {
-        let initialTime = 1000;
+        const onClick = jest.fn();
 
         const button = (
           <SpeedButton
-            onClick={(time) => initialTime = time}
+            onClick={onClick}
             time={initialTime}
             {...defaultButtonProps}
           />
@@ -45,17 +46,17 @@ describe('SpeedButton',() => {
 
         fireEvent.click(getByText('Default'));
 
-        expect(initialTime).toBe(1000);
+        expect(onClick).toHaveBeenCalledWith(1000);
       });
     });
 
     describe('in the slower button',() => {
       it('set the time to half', () => {
-        let initialTime = 1000;
+        const onClick = jest.fn();
 
         const button = (
           <SpeedButton
-            onClick={(time) => initialTime = time}
+            onClick={onClick}
             time={initialTime}
             {...fasterButtonProps}
           />
@@ -65,7 +66,7 @@ describe('SpeedButton',() => {
 
         fireEvent.click(getByText('Faster'));
 
-        expect(initialTime).toBe(500);
+        expect(onClick).toHaveBeenCalledWith(500);
       });
     });
   });
