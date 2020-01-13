@@ -5,11 +5,11 @@ import Button from '../button';
 function SpeedButton({
   time,
   onClick,
-  speedMultiply,
+  speedMultiplier,
   ...props
 }){
   const handleOnClick = () => {
-    if (speedMultiply) onClick(time * speedMultiply);
+    if (speedMultiplier) onClick(time * speedMultiplier);
     else onClick(1000);
   }
 

@@ -7,8 +7,8 @@ const buildFrame = ({
 }) => {    
 	const color = createRandomRGB();
 	const size = createRandomInt(maxSize);
-	const left = createRandomInt((window.innerWidth - size));
-	const bottom = createRandomInt((window.innerHeight - size));
+	const left = createRandomInt(window.innerWidth - size);
+	const bottom = createRandomInt(	window.innerHeight - size);
 
 	const newFrameStyle = {
 		color,

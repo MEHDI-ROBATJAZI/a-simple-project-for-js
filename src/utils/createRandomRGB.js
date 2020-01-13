@@ -1,7 +1,9 @@
+import createRandomInt from './createRandomInt';
+
 const createRandomRGB = () => {
-	const R = Math.floor(Math.random() * 255).toString();
-	const G = Math.floor(Math.random() * 255).toString();
-	const B = Math.floor(Math.random() * 255).toString();
+	const R = createRandomInt(255);
+	const G = createRandomInt(255);
+	const B = createRandomInt(255);
 	
 	return `rgb(${R}, ${G}, ${B})`;
 };
